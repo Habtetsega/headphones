@@ -1,0 +1,199 @@
+/* Variables
+   ============================= */
+
+:root {
+    --color-primary: #D73953;
+    --color-black: #090909;
+    --color-white: #ffffff;
+    --color-grey: #a0a0a0;
+    --color-light-grey: #f3f3f3;
+    --color-dark-grey: #353535;
+    --text-color: var(--color-black);
+    --font-family-base: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --font-family-title: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --font-size-small: 1.2rem;
+    --font-size-medium: 1.6rem;
+    --font-size-large: 1.8rem;
+    --font-size-x-large: 2.3rem;
+    --font-size-xx-large: 4.8rem;
+    --font-weight-regular: 400;
+    --font-weight-bold: 700;
+    --line-height-small: 1.2;
+    --line-height-base: 1.5;
+    --line-height-big: 1.8;
+    /** SECTION **/
+    --section-padding: 5rem 0;
+    --section-header-padding: 0 0 3rem;
+    --section-header-align: center;
+    --section-title-font-size: var(--font-size-xx-large);
+    --section-title-font-weight: var(--font-weight-bold);
+    --section-title-line-height: var(--line-height-small);
+    --section-title-margin: 0;
+    --section-title-color: var(--color-black);
+    --section-tagline-transform: uppercase;
+    --section-tagline-color: var(--color-primary);
+    --section-tagline-font-family: var(--font-family-headings);
+    --section-tagline-font-weight: var(--font-weight-bold);
+    --section-tagline-margin: 0;
+    --section-body-padding: 2rem 0 4rem;
+    --section-footer-padding: 3rem 0 0;
+    --section-footer-align: center;
+    /** HEADER **/
+    --header-padding: 4rem 0 0;
+    --header-logo-position: relative;
+    --header-logo-link-display: inline-block;
+    --header-logo-link-position: absolute;
+    --header-logo-link-top: -1rem;
+    --header-logo-link-left: 0;
+}
+html {
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-title);
+    font-weight: var(--font-weight-bold);
+}
+body {
+    background-image: url("images/headphones_hero_1.jpg");
+}
+a{
+    color:white;
+    text-decoration:none;
+}
+a:hover{
+    color:#ff6565;
+}
+a:active{
+    color:#FF6565;
+}
+.header {
+    position: relative;
+    z-index: 3;
+    background: transparent;
+}
+.header-container{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+}
+.header-container #logo{
+    justify-content:flex-start;  
+    flex-shrink:100;
+}
+.navbar-menu{
+    justify-content:flex-end;
+}
+ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+    font-size:large;
+  }
+li {
+    margin: 1rem;
+}
+
+.home{
+    padding-left:20%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-end;
+    height:500px;
+    color:white;
+}
+.home .txt {
+    font-size: large;
+}
+.home h1{
+    display:flex;
+    font-size:xx-large;
+    align-self:flex-start;
+}
+.home .home-but{
+    height:45px;
+    width:200px;
+    border-radius:100px;
+    border-collapse:collapse;
+    border-color:#FF6565;
+    color:white;
+    background-color:#ff6565;
+}
+.home .home-but{
+    opacity:0.9;
+}
+.home .paragraph{
+    display: flex;
+    flex-wrap:nowrap;
+    align-items: center;
+    justify-content:center;
+}
+.side-menu {
+    display: none;
+}
+
+@media screen and (max-width:480px){
+    body{
+        background-position:top center;
+    }
+    .navbar-menu{
+        display:none;
+    }
+    .hamb {
+        cursor: pointer;
+        float: left;
+        padding: 40px 20px;
+    }
+
+    .hamb-line {
+        background: white;
+        display: block;
+        height: 2px;
+        position: relative;
+        width: 24px;
+    }
+        .hamb-line::before,
+        .hamb-line::after {
+            background: white;
+            content: '';
+            display: block;
+            height: 100%;
+            position: absolute;
+            transition: all .2s ease-out;
+            width: 100%;
+        }
+
+        .hamb-line::before {
+            top: 5px;
+        }
+
+        .hamb-line::after {
+            top: -5px;
+        }
+
+    .side-menu {
+        display: none;
+    }
+        .side-menu:checked ~ .navbar-menu {
+            display: flex;
+            align-content:center;
+            justify-content:center;
+        }
+
+        .side-menu:checked ~ .hamb .hamb-line {
+            background: transparent;
+        }
+
+            .side-menu:checked ~ .hamb .hamb-line::before {
+                transform: rotate(-45deg);
+                top: 0;
+            }
+
+            .side-menu:checked ~ .hamb .hamb-line::after {
+                transform: rotate(45deg);
+                top: 0;
+            }
+}
